@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "08ecb0e1-335b-4ec0-839e-16a80f0646e2",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "E:\\zongy\\WORK\\Claude code\\FPGAandDOG\\.archify\\architecture-fpgadog-20261026-000432\\candidate.json",
+  "output": "E:\\zongy\\WORK\\Claude code\\FPGAandDOG\\.archify\\architecture-fpgadog-20261026-000432\\fpgadog.html",
+  "specification": {
+    "sha256": "daf7d9c7ac80c9cae42f7688df0dd31690fb69e1e36c8958f062b7037d9bbe1d",
+    "bytes": 6700
+  },
+  "artifact": {
+    "sha256": "c09cbdd77b13d84b7a9696553276dbb6ae8b8478487079e9a06eb607822d4156",
+    "bytes": 763606
+  }
+}

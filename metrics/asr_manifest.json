@@ -1,0 +1,61 @@
+{
+  "note": "Ground truth = the sentence the speaker actually said while the clip was recorded (cross-checked against logs/voice_live_20261026.log and logs/voice_agent_20261026.log). Clips with an empty 'expected' are silence: any transcript is a hallucination. 'aggregate' lists the files that count toward the headline CER; the doubled 48 kHz capture is excluded because its bad score is a capture bug, not an ASR bug.",
+  "clips": [
+    {
+      "file": "metrics/evidence/voice_goto1_20261026.wav",
+      "expected": "去一号位置",
+      "intent": "goto",
+      "target": 1
+    },
+    {
+      "file": "metrics/evidence/voice_goto1_20261026b.wav",
+      "expected": "去一号位置",
+      "intent": "goto",
+      "target": 1
+    },
+    {
+      "file": "metrics/evidence/voice_goto1_20261026c.wav",
+      "expected": "去一号位置",
+      "intent": "goto",
+      "target": 1
+    },
+    {
+      "file": "metrics/evidence/voice_live_20261026.wav",
+      "expected": "去三号位置看看数字",
+      "intent": "goto",
+      "target": 3
+    },
+    {
+      "file": "metrics/evidence/mic_2ch.wav",
+      "expected": "去三号位置看看是什么数字",
+      "intent": "goto",
+      "target": 3
+    },
+    {
+      "file": "metrics/evidence/mic_shared2ch.wav",
+      "expected": "去一号位置看看是什么数字",
+      "intent": "goto",
+      "target": 1,
+      "note": "doubled capture at 48 kHz (known capture artifact); excluded from the aggregate"
+    },
+    {
+      "file": "metrics/evidence/mic_silence.wav",
+      "expected": "",
+      "note": "the user was silent; the old pipeline answered with an English hallucination"
+    },
+    {
+      "file": "metrics/evidence/mic_gated.wav",
+      "expected": "",
+      "note": "VAD-gated silence, 10 s"
+    }
+  ],
+  "aggregate": [
+    "metrics/evidence/voice_goto1_20261026.wav",
+    "metrics/evidence/voice_goto1_20261026b.wav",
+    "metrics/evidence/voice_goto1_20261026c.wav",
+    "metrics/evidence/voice_live_20261026.wav",
+    "metrics/evidence/mic_2ch.wav",
+    "metrics/evidence/mic_silence.wav",
+    "metrics/evidence/mic_gated.wav"
+  ]
+}

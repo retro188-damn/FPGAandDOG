@@ -1,0 +1,64 @@
+# FPGA 安全闸门自检（gate_test.py）—— 2026-11-01 16:12 实测
+
+**运行命令**（在 ZYNQ 板上，先停 pl_service 让它独占 PL）：
+
+```bash
+# 板上
+sudo systemctl stop fpga-gate-bridge
+echo xilinx | sudo -S /home/xilinx/safety_gate/run.sh /home/xilinx/safety_gate/gate_test.py
+sudo systemctl start fpga-gate-bridge
+```
+
+**原始输出（27 项全部 PASS）**：
+
+```
+loading overlay /home/xilinx/safety_gate/system.bit
+overlay loaded in 0.81s
+[PASS] version register 0x10000
+[PASS] clock matches RTL constant 27.777 MHz (expected 27.778, ratio 1.000)
+[PASS] gate closed while disabled 0x4
+[PASS] output zero while disabled
+[PASS] gate open after arm 0xf
+[PASS] wd ok bit 0xf
+[PASS] command not passed through instantly first read 0
+[PASS] out_vx follows command after ramp 100
+[PASS] out_vy follows command after ramp -50
+[PASS] out_wz follows command after ramp 300
+[PASS] ramp reached 500 mm/s 500
+[PASS] ramp step bounded by DELTA max 40 mm/s over a 1.1 ms sample gap (allowed 40)
+[PASS] ramp step counter matches travel 20 steps for 400 mm/s, expected 20
+[PASS] no timeout while feeding 0xf
+[PASS] output still following 100
+[PASS] every arm reloaded the watchdog reloads +20 feeds 20
+[PASS] timeout fault after arming stops after 201.1 ms from the last arm (50.3 ms after the poll started)
+[PASS] timeout close to programmed value 201.1 ms vs 200 ms
+[PASS] output zero after timeout 0
+[PASS] timeout counter incremented timeouts=1 cmds=21
+[PASS] command counter incremented timeouts=1 cmds=21
+[PASS] fault stays until cleared 0x1e
+[PASS] output stays zero while faulted
+[PASS] gate closed while faulted 0x1e
+[PASS] output returns after clear (ramped) -25
+[PASS] output zero on estop 0
+[PASS] estopped status 0xa
+
+ALL CHECKS PASSED
+```
+
+## 这 27 项分别证明什么
+
+| 组 | 断言 | 证明的事 |
+|---|---|---|
+| 身份 | `version register 0x10000`、`clock matches 27.777 MHz (ratio 1.000)` | 板上跑的就是我们综合出来的那个设计，PL 时钟 27.777 MHz 与 RTL 常量一致（斜坡的 1 ms 台阶才有意义） |
+| 关门态 | `gate closed while disabled`、`output zero while disabled` | 默认关机、输出为零——上电即安全 |
+| 放行 | `gate open after arm`、`out_vx/vy/wz follows command after ramp` | 只有收到新命令才开门，且输出跟着命令走 |
+| 斜坡 | `command not passed through instantly first read 0`、`ramp reached 500 mm/s`、`max 40 mm/s over a 1.1 ms sample gap`、`counter matches travel 20 steps for 400 mm/s` | **速度是爬上去的**：每 1 ms 最多变 20 mm/s，从 100 到 500 正好 20 步（不是"一次跳到位"） |
+| 看门狗 | `timeout fault after arming stops after 201.1 ms`、`close to programmed value 200 ms`、`output zero after timeout` | 停发命令 200 ms 内自动归零，实测 201.1 ms |
+| 闩锁 | `fault stays until cleared 0x1e`、`output stays zero while faulted`、`output returns after clear` | 故障是**粘性**的，不清就不恢复；清除后才重新放行 |
+| 急停 | `output zero on estop`、`estopped status 0xa` | 软急停寄存器立即归零 |
+
+## 复现要点
+
+- 板上 `system.bit` 与 `system.hwh` 必须**同名同目录**，否则 overlay 加载失败；
+- 自检会**重载 overlay**，所以必须先把 `fpga-gate-bridge` 停掉，跑完再起；
+- 采集时的板端时钟已与 PC 对齐（`sudo date -s`），此前的旧日志是 2021 年时间戳，见 `gate_evidence_20261101.md` 第 1 节。

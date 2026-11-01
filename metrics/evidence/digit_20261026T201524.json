@@ -1,0 +1,30 @@
+{
+  "stamp": "20261026T201524",
+  "decision": "87",
+  "agreement": 0.25,
+  "shots": 4,
+  "min_confidence": 0.6,
+  "glyphs": [
+    {
+      "digit": "8",
+      "confidence": 0.6636776328086853,
+      "box": [
+        248,
+        365,
+        271,
+        388
+      ]
+    },
+    {
+      "digit": "7",
+      "confidence": 0.9413840174674988,
+      "box": [
+        285,
+        417,
+        362,
+        480
+      ]
+    }
+  ],
+  "image": "metrics\\evidence\\digit_20261026T201524.png"
+}

@@ -1,0 +1,20 @@
+{
+  "stamp": "20261026T204854",
+  "decision": "2",
+  "agreement": 0.6666666666666666,
+  "shots": 3,
+  "min_confidence": 0.6,
+  "glyphs": [
+    {
+      "digit": "2",
+      "confidence": 0.9705463647842407,
+      "box": [
+        307,
+        345,
+        401,
+        403
+      ]
+    }
+  ],
+  "image": "metrics\\evidence\\digit_20261026T204854.png"
+}

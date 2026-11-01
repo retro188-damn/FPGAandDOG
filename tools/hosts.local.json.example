@@ -1,0 +1,6 @@
+{
+  "pynq":      {"ip": "192.168.1.100", "user": "xilinx",  "password": "请填写板端登录密码"},
+  "dog":       {"ip": "192.168.1.120", "user": "firefly", "password": "请填写机器人登录密码"},
+  "perception":{"ip": "192.168.1.103", "user": "ysc",     "password": "请填写感知板登录密码"},
+  "pc":        {"ip": "192.168.1.104", "user": "",        "password": ""}
+}

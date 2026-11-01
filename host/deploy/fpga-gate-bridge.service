@@ -1,0 +1,30 @@
+[Unit]
+Description=FPGA gate bridge: Lite3 velocity through the PL safety gate
+Documentation=file:///home/xilinx/safety_gate/RUNBOOK_SERVICE.md
+# The service only needs the local NIC; no DNS, no internet.
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# MMIO via /dev/mem and PYNQ's PL loader both need root.
+User=root
+WorkingDirectory=/home/xilinx/safety_gate
+Environment=XILINX_XRT=/usr
+Environment=PYTHONUNBUFFERED=1
+Environment=PATH=/usr/local/share/pynq-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/usr/local/share/pynq-venv/bin/python3 /home/xilinx/safety_gate/pl_service.py \
+    --overlay /home/xilinx/safety_gate/system.bit \
+    --cmd-port 43902 --status-port 43903 \
+    --deadman-ms 300 --period-ms 20 \
+    --status-peer 192.168.1.104 \
+    --log /home/xilinx/safety_gate/logs/pl_service.log
+# Restart on crash.  The gate is closed by the SIGTERM handler, and even if the
+# process dies without one the PL watchdog drops the outputs within 200 ms.
+Restart=always
+RestartSec=2
+KillSignal=SIGTERM
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

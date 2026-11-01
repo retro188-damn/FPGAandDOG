@@ -1,0 +1,191 @@
+[2026-11-01 15:25:42,260] [INFO] [voice_agent] starting; wake words: 小狗小狗 小狗狗 小狗 | stop words: 停下 停下来 停止 别动
+[2026-11-01 15:25:42,260] [INFO] [voice_agent] motion allowed: True
+[2026-11-01 15:25:43,890] [INFO] [voice_agent] paraformer model loaded in 1.58s (threads=4)
+[2026-11-01 15:25:43,890] [INFO] [voice_agent] ASR warm-up 1.58s
+[2026-11-01 15:25:43,890] [INFO] [voice_agent] SPEAK: 我在听
+[2026-11-01 15:25:43,938] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:25:47,712] [INFO] [voice_agent] endpoint detected after 2.20s
+[2026-11-01 15:25:47,787] [INFO] [voice_agent] HEARD: 小狗去八号
+[2026-11-01 15:25:47,787] [INFO] [voice_agent] INTENT: {'intent': 'goto', 'target': 8, 'actions': [], 'raw': '去八号', 'confidence': 0.9}
+[2026-11-01 15:25:47,788] [INFO] [voice_agent] SPEAK: 好的，我去找数字八
+[2026-11-01 15:25:47,792] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:25:56,101] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:25:56,102] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:26:04,301] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:26:04,301] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:26:11,030] [INFO] [voice_agent] hunt 8 result: TargetResult(found=False, reason='saw 4, 8, ? but not 8', seen=[(0.0, '8', 0.8210929830869039), (40.0, '', 0.0), (80.0, '4', 0.6728777488072714), (-80.0, '4', 0.640726109345754), (120.0, '', 0.0), (-120.0, '', 0.0)], heading_offset_deg=0.0, box=None)
+[2026-11-01 15:26:11,070] [INFO] [voice_agent] capture aborted by stop_flag
+[2026-11-01 15:26:11,107] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:26:11,107] [INFO] [voice_agent] SPEAK: 没找到数字八，我看到的数字有4、8
+[2026-11-01 15:26:11,109] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:26:19,410] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:26:19,410] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:26:27,617] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:26:27,618] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:26:35,806] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:26:35,806] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:26:43,983] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:26:43,983] [INFO] [voice_agent] idle, still listening (turns=1)
+[2026-11-01 15:26:43,983] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:26:52,162] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:26:52,162] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:27:00,374] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:27:00,374] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:27:08,583] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:27:08,583] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:27:16,792] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:27:16,793] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:27:24,995] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:27:24,995] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:27:33,201] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:27:33,201] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:27:41,415] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:27:41,415] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:27:49,625] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:27:49,625] [INFO] [voice_agent] idle, still listening (turns=1)
+[2026-11-01 15:27:49,626] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:27:57,838] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:27:57,838] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:28:06,041] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:28:06,041] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:28:14,223] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:28:14,224] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:28:22,410] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:28:22,410] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:28:30,602] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:28:30,603] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:28:38,797] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:28:38,797] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:28:47,003] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:28:47,003] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:28:55,209] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:28:55,210] [INFO] [voice_agent] idle, still listening (turns=1)
+[2026-11-01 15:28:55,210] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:03,389] [INFO] [voice_agent] window full (8.0s) but still speaking -> extending up to 4.0s
+[2026-11-01 15:29:03,587] [INFO] [voice_agent] endpoint detected after 0.90s
+[2026-11-01 15:29:03,616] [INFO] [voice_agent] HEARD: 不在编
+[2026-11-01 15:29:03,617] [INFO] [voice_agent] ignored (no wake word): '不在编'
+[2026-11-01 15:29:03,617] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:05,670] [INFO] [voice_agent] endpoint detected after 2.00s
+[2026-11-01 15:29:05,718] [INFO] [voice_agent] HEARD: 小狗去八号
+[2026-11-01 15:29:05,719] [INFO] [voice_agent] INTENT: {'intent': 'goto', 'target': 8, 'actions': [], 'raw': '去八号', 'confidence': 0.9}
+[2026-11-01 15:29:05,720] [INFO] [voice_agent] SPEAK: 好的，我去找数字八
+[2026-11-01 15:29:05,723] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:14,130] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:29:14,130] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:21,773] [INFO] [voice_agent] hunt 8 result: TargetResult(found=True, reason='found', seen=[(0.0, '3', 0.7594557007153829), (-80.0, '8', 0.9937726259231567)], heading_offset_deg=-80.0, box=(393, 286, 563, 400))
+[2026-11-01 15:29:21,793] [INFO] [voice_agent] capture aborted by stop_flag
+[2026-11-01 15:29:21,795] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:29:21,795] [INFO] [voice_agent] SPEAK: 找到了，数字八在这边
+[2026-11-01 15:29:21,800] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:21,833] [INFO] [voice_agent] approach: card width 174 px (target 120)
+[2026-11-01 15:29:21,833] [INFO] [voice_agent] approach: 174 px is close enough
+[2026-11-01 15:29:23,958] [INFO] [voice_agent] read result: {"digits": "8", "confidence": 0.991, "agreement": 1.0, "shots": 3, "reason": "ok"}
+[2026-11-01 15:29:24,057] [INFO] [voice_agent] capture aborted by stop_flag
+[2026-11-01 15:29:24,059] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:29:24,059] [INFO] [voice_agent] SPEAK: 板子上写的是八
+[2026-11-01 15:29:24,062] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:32,113] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:29:32,113] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:40,181] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:29:40,181] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:48,376] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:29:48,376] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:29:56,566] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:29:56,566] [INFO] [voice_agent] idle, still listening (turns=2)
+[2026-11-01 15:29:56,566] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:30:04,757] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:30:04,758] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:30:12,952] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:30:12,953] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:30:21,203] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:30:21,204] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:30:29,420] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:30:29,420] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:30:37,632] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:30:37,632] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:30:45,846] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:30:45,846] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:30:54,055] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:30:54,056] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:31:02,264] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:31:02,264] [INFO] [voice_agent] idle, still listening (turns=2)
+[2026-11-01 15:31:02,264] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:31:10,479] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:31:10,479] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:31:18,682] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:31:18,682] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:31:26,891] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:31:26,891] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:31:35,121] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:31:35,121] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:31:43,321] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:31:43,322] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:31:51,531] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:31:51,531] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:31:59,746] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:31:59,746] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:32:07,942] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:32:07,942] [INFO] [voice_agent] idle, still listening (turns=2)
+[2026-11-01 15:32:07,942] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:32:16,132] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:32:16,133] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:32:24,314] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:32:24,314] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:32:32,515] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:32:32,515] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:32:40,713] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:32:40,714] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:32:48,916] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:32:48,916] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:32:57,120] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:32:57,121] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:33:05,330] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:33:05,330] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:33:13,548] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:33:13,548] [INFO] [voice_agent] idle, still listening (turns=2)
+[2026-11-01 15:33:13,548] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:33:21,749] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:33:21,749] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:33:29,960] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:33:29,960] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:33:38,167] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:33:38,168] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:33:46,386] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:33:46,386] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:33:54,585] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:33:54,585] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:34:02,792] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:34:02,792] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:34:11,011] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:34:11,011] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:34:19,217] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:34:19,218] [INFO] [voice_agent] idle, still listening (turns=2)
+[2026-11-01 15:34:19,218] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:34:27,433] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:34:27,433] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:34:35,640] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:34:35,640] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:34:43,851] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:34:43,852] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:34:52,069] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:34:52,070] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:35:00,268] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:35:00,268] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:35:08,478] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:35:08,479] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:35:16,677] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:35:16,678] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:35:24,888] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:35:24,888] [INFO] [voice_agent] idle, still listening (turns=2)
+[2026-11-01 15:35:24,888] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:35:33,100] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:35:33,100] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:35:41,316] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:35:41,316] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:35:49,529] [WARNING] [voice_agent] no speech above rms 0.0150 within 8.0s
+[2026-11-01 15:35:49,529] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)
+[2026-11-01 15:35:52,819] [INFO] [voice_agent] endpoint detected after 1.20s
+[2026-11-01 15:35:52,888] [INFO] [voice_agent] HEARD: 看到吗
+[2026-11-01 15:35:52,888] [INFO] [voice_agent] ignored (no wake word): '看到吗'
+[2026-11-01 15:35:52,888] [INFO] [voice_agent] listening (max 8.0s, stop after 700 ms silence)

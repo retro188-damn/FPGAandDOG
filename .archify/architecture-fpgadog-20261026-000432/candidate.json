@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "FPGAandDOG 具身智能系统架构",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/architecture-fpgadog-20261026-000432/fpgadog.html"
+  },
+  "components": [
+    {
+      "id": "mic",
+      "type": "frontend",
+      "label": "麦克风阵列",
+      "sublabel": "2ch · 48 kHz",
+      "pos": [
+        40,
+        280
+      ],
+      "size": [
+        120,
+        60
+      ]
+    },
+    {
+      "id": "asr",
+      "type": "backend",
+      "label": "语音识别 ASR",
+      "sublabel": "sherpa-onnx int8",
+      "pos": [
+        220,
+        280
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "intent",
+      "type": "backend",
+      "label": "意图 + 任务计划",
+      "sublabel": "规则引擎 · 108 用例",
+      "pos": [
+        436,
+        280
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "tts",
+      "type": "backend",
+      "label": "语音播报 TTS",
+      "sublabel": "Windows SAPI · 离线",
+      "pos": [
+        436,
+        140
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "bridge",
+      "type": "backend",
+      "label": "gate_bridge",
+      "sublabel": "AXI 读写 → UDP 编码",
+      "pos": [
+        652,
+        280
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "monitor",
+      "type": "backend",
+      "label": "state_monitor",
+      "sublabel": "JSONL 日志 + 波形",
+      "pos": [
+        436,
+        440
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "gate",
+      "type": "security",
+      "label": "安全闸门",
+      "sublabel": "safety_gate · AXI4-Lite",
+      "tag": "200 ms 归零",
+      "pos": [
+        940,
+        280
+      ],
+      "size": [
+        160,
+        60
+      ]
+    },
+    {
+      "id": "dog",
+      "type": "external",
+      "label": "运动控制",
+      "sublabel": "Lite3 120 · UDP :43893",
+      "tag": "0x0140/41/45",
+      "pos": [
+        1200,
+        280
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "relay",
+      "type": "messagebus",
+      "label": "状态中转",
+      "sublabel": "state_relay · 103:43897",
+      "pos": [
+        1200,
+        440
+      ],
+      "size": [
+        160,
+        66
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "上位机 · 笔记本 192.168.1.89",
+      "wraps": [
+        "mic",
+        "asr",
+        "intent",
+        "tts",
+        "bridge",
+        "monitor"
+      ],
+      "pad": 18
+    },
+    {
+      "kind": "region",
+      "label": "ZYNQ-7020 PL · 192.168.1.101",
+      "wraps": [
+        "gate"
+      ],
+      "pad": 18
+    },
+    {
+      "kind": "region",
+      "label": "机器人 · 120 运动主板 / 103 感知板",
+      "wraps": [
+        "dog",
+        "relay"
+      ],
+      "pad": 18
+    }
+  ],
+  "connections": [
+    {
+      "id": "mic-asr",
+      "from": "mic",
+      "to": "asr",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "asr-intent",
+      "from": "asr",
+      "to": "intent",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "intent-bridge",
+      "from": "intent",
+      "to": "bridge",
+      "label": "动作序列",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "intent-tts",
+      "from": "intent",
+      "to": "tts",
+      "label": "话术",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "bridge-gate-write",
+      "from": "bridge",
+      "to": "gate",
+      "label": "AXI 写",
+      "fromSide": "right",
+      "toSide": "left",
+      "route": "straight",
+      "labelDy": -14
+    },
+    {
+      "id": "gate-bridge-read",
+      "from": "gate",
+      "to": "bridge",
+      "label": "读回 out_v*",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          1020,
+          392
+        ],
+        [
+          727,
+          392
+        ]
+      ],
+      "labelDy": 12
+    },
+    {
+      "id": "bridge-dog",
+      "from": "bridge",
+      "to": "dog",
+      "label": "UDP 速度帧 :43893",
+      "variant": "emphasis",
+      "fromSide": "top",
+      "toSide": "top",
+      "via": [
+        [
+          727,
+          196
+        ],
+        [
+          1280,
+          196
+        ]
+      ],
+      "labelDy": -10
+    },
+    {
+      "id": "dog-relay",
+      "from": "dog",
+      "to": "relay",
+      "label": "0x0901 · 100 Hz",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "id": "relay-monitor",
+      "from": "relay",
+      "to": "monitor",
+      "label": "转发 PC:43900",
+      "variant": "dashed",
+      "fromSide": "left",
+      "toSide": "right"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "上位机 · 笔记本 192.168.1.89",
+      "items": [
+        "ASR 全离线：sherpa-onnx paraformer int8，8 s 音频 0.12 s 出字（RTF 0.014）",
+        "意图与任务计划用规则引擎，108 个用例回归；播报用 Windows SAPI",
+        "对接 PL 是一读一写：写命令并重装看门狗，再读回闸门后的速度"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "ZYNQ-7020 PL · 192.168.1.101",
+      "items": [
+        "safety_gate 作为 AXI4-Lite 从设备，基地址 0x43C00000",
+        "看门狗 200 ms 未重装就把速度输出归零，故障粘性锁存到 clear_faults",
+        "带版本、心跳、命令与超时计数寄存器；板端自检 23 项全过"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "机器人 · 120 运动主板 / 103 感知板",
+      "items": [
+        "120 只认 UDP 速度帧 0x0140/41/45（double，m/s 与 rad/s）",
+        "状态 0x0901 为 200 B、100 Hz，按狗自身配置固定发往 103:43897",
+        "103 上 state_relay 把状态转发给 PC 与 ZYNQ，ROS 桥接仍走 43896"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "演示约束",
+      "items": [
+        "狗电量耗尽会自行趴下，动测前需充满（33.6 V/5 A 约 1.5 h）",
+        "摄像头 RTSP 只有 640×480@30，且只允许一个客户端",
+        "凡是会让设备动起来的操作，先报告后执行"
+      ]
+    }
+  ]
+}

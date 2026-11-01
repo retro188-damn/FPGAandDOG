@@ -1,0 +1,69 @@
+{
+  "legs": 6,
+  "ok": 6,
+  "distance_mae_m": 0.0018,
+  "max_abs_error_m": 0.003,
+  "mean_elapsed_s": 4.605,
+  "rows": [
+    {
+      "cycle": 1,
+      "leg": "fwd",
+      "target_m": 0.4,
+      "travelled_m": 0.401,
+      "error_m": 0.001,
+      "elapsed_s": 4.437,
+      "ok": true,
+      "reason": "reached"
+    },
+    {
+      "cycle": 1,
+      "leg": "bwd",
+      "target_m": 0.4,
+      "travelled_m": 0.401,
+      "error_m": 0.001,
+      "elapsed_s": 4.688,
+      "ok": true,
+      "reason": "reached"
+    },
+    {
+      "cycle": 2,
+      "leg": "fwd",
+      "target_m": 0.4,
+      "travelled_m": 0.403,
+      "error_m": 0.003,
+      "elapsed_s": 4.466,
+      "ok": true,
+      "reason": "reached"
+    },
+    {
+      "cycle": 2,
+      "leg": "bwd",
+      "target_m": 0.4,
+      "travelled_m": 0.403,
+      "error_m": 0.003,
+      "elapsed_s": 4.805,
+      "ok": true,
+      "reason": "reached"
+    },
+    {
+      "cycle": 3,
+      "leg": "fwd",
+      "target_m": 0.4,
+      "travelled_m": 0.402,
+      "error_m": 0.002,
+      "elapsed_s": 4.439,
+      "ok": true,
+      "reason": "reached"
+    },
+    {
+      "cycle": 3,
+      "leg": "bwd",
+      "target_m": 0.4,
+      "travelled_m": 0.401,
+      "error_m": 0.001,
+      "elapsed_s": 4.794,
+      "ok": true,
+      "reason": "reached"
+    }
+  ]
+}

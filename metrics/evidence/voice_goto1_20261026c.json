@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-26T18:46:15+08:00",
+  "what": "voice command to dog motion, end to end",
+  "transcript": "去一号位置",
+  "intent": {
+    "intent": "goto",
+    "target": 1
+  },
+  "target_m": 0.6,
+  "travelled_m": 0.601,
+  "elapsed_s": 6.916,
+  "commands": 137,
+  "start_pos": [
+    -0.043,
+    -0.012,
+    0.303
+  ],
+  "end_pos": [
+    0.7719,
+    -0.0424,
+    0.299
+  ],
+  "path": "mic -> ASR(paraformer int8) -> intent -> MotionExecutor -> pl_service(UDP 43902) -> PL safety gate(AXI 0x43C00000) -> dog(120:43893)",
+  "evidence_wav": "metrics/evidence/voice_goto1_20261026c.wav"
+}

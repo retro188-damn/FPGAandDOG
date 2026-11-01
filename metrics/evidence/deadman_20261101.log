@@ -1,0 +1,5 @@
+[2026-11-01 16:04:45,004] [INFO] [pl_service] gate enabled by fresh command
+[2026-11-01 16:04:45,583] [WARNING] [pl_service] gate closed: deadman: no command for 300 ms
+[2026-11-01 16:04:50,744] [INFO] [pl_service] gate enabled by fresh command
+[2026-11-01 16:04:51,343] [WARNING] [pl_service] gate closed: deadman: no command for 300 ms
+--- exit=0 ---
